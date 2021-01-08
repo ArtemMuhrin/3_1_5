@@ -28,14 +28,14 @@ public class WebController {
     }
 
     @RequestMapping(value = "admin", method = RequestMethod.POST)
-    public String deleteUser(@RequestParam("id") int id, ModelMap model) {
-        userService.delete(Long.valueOf(id));
+    public String deleteUser(@RequestParam("id") long id, ModelMap model) {
+        userService.delete(id);
         return "redirect:/admin";
     }
 
     @RequestMapping(value = "admin/edit", method = RequestMethod.GET)
-    public String showUpdateMenu(@RequestParam("id") int id, ModelMap model) {
-        model.addAttribute("user", userService.getById(Long.valueOf(id)));
+    public String showUpdateMenu(@RequestParam("id") long id, ModelMap model) {
+        model.addAttribute("user", userService.getById(id));
         model.addAttribute("roleList", userService.setRoles());
         return "edit";
     }
