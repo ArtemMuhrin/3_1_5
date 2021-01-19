@@ -1,17 +1,13 @@
 package com.example.demo.dao;
 
-import com.example.demo.model.Role;
 import com.example.demo.model.User;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.CollectionUtils;
 
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 
 @Repository
@@ -40,12 +36,6 @@ public class UserDaoImp implements UserDao {
     public List<User> listUsers() {
         TypedQuery<User> query = entityManager.createQuery("from User", User.class);
         return query.getResultList();
-    }
-
-    @Override
-    public Set<Role> setRoles() {
-        TypedQuery<Role> query = entityManager.createQuery("from Role", Role.class);
-        return new HashSet<>(query.getResultList());
     }
 
     @Override

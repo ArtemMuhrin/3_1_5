@@ -1,0 +1,16 @@
+.white-back {
+    background-color: white;
+}
+.border-light {
+    border: 1px solid lightgrey;
+}
+.border-gray {
+    border: 1px solid #c4c4c4;
+}
+.main-back {
+    background-color: #efeeee;
+}
+.modal-param {
+    width: 350px;
+    margin: auto;
+}

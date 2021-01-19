@@ -1,6 +1,7 @@
 package com.example.demo.converters;
 
 import com.example.demo.model.Role;
+import com.example.demo.service.RoleService;
 import com.example.demo.service.UserService;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,10 +16,10 @@ import java.util.Set;
 public class StringArrayToRoleSetConverter implements Converter<String[], Set<Role>> {
 
     @Autowired
-    private UserService userService;
+    private RoleService roleService;
 
     @Override
     public Set<Role> convert(String[] inputArr) {
-        return userService.getSetOfRolesByName(inputArr);
+        return roleService.getSetOfRolesByName(inputArr);
     }
 }

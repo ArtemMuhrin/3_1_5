@@ -1,11 +1,10 @@
 package com.example.demo.converters;
 
 import com.example.demo.model.Role;
-import com.example.demo.service.UserService;
+import com.example.demo.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
-
 
 import java.util.Set;
 
@@ -14,11 +13,11 @@ import java.util.Set;
 public class StringToRoleSetConverter implements Converter<String, Set<Role>> {
 
     @Autowired
-    private UserService userService;
+    private RoleService roleService;
 
     @Override
     public Set<Role> convert(String inputString) {
         String[] inArr = {inputString};
-        return userService.getSetOfRolesByName(inArr);
+        return roleService.getSetOfRolesByName(inArr);
     }
 }
