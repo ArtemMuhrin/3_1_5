@@ -9,7 +9,6 @@ $('#edit-modal').on('show.bs.modal', function (event) {
     modal.find("#edit-password").val(button.data('user-password'));
     modal.find("#edit-roles").val(button.data('user-roles'));
 })
-
 $('#delete-modal').on('show.bs.modal', function (event) {
     var button = $(event.relatedTarget)
     var modal = $(this)
