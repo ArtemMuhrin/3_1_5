@@ -18,7 +18,7 @@ public class RoleServiceImpl implements RoleService {
     @Transactional(readOnly = true)
     @Override
     public Set<Role> setRoles() {
-        return roleDao.setRoles();
+        return new HashSet<>(roleDao.findAll());
     }
 
     @Transactional(readOnly = true)

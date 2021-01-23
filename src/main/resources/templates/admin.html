@@ -61,9 +61,7 @@
                                                 <a class="btn btn-info btn-sm" data-toggle="modal"
                                                    th:attr="data-user-id=''+${user.id}+'',
                                                      data-user-name=''+${user.name}+'',
-                                                     data-user-email=''+${user.email}+'',
-                                                     data-user-password=''+${user.password}+'',
-                                                     data-user-roles=''+${user.roles}+''"
+                                                     data-user-email=''+${user.email}+''"
                                                    data-target="#edit-modal">Edit
                                                 </a>
                                             </td>
@@ -122,7 +120,7 @@
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary"
-                                                                    ata-dismiss="modal">Close
+                                                                    data-dismiss="modal">Close
                                                             </button>
                                                             <button type="submit" form="editForm"
                                                                     class="btn btn-primary">Edit

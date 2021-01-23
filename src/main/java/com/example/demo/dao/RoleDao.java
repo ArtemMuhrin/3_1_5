@@ -1,9 +1,7 @@
 package com.example.demo.dao;
 
 import com.example.demo.model.Role;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.Set;
-
-public interface RoleDao {
-    Set<Role> setRoles();
+public interface RoleDao extends JpaRepository<Role, Long> {
 }
