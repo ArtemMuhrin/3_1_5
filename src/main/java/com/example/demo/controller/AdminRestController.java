@@ -52,7 +52,7 @@ public class AdminRestController {
     @PostMapping(value = "/users")
     public ResponseEntity<?> create(@RequestBody User user) {
         userService.add(user);
-        return new ResponseEntity<>(HttpStatus.CREATED);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @DeleteMapping(value = "/users/{id}")
@@ -62,8 +62,8 @@ public class AdminRestController {
 
     }
 
-    @PutMapping(value = "/users/{id}")
-    public ResponseEntity<?> update(@PathVariable(name = "id") long id, @RequestBody User user) {
+    @PutMapping(value = "/users")
+    public ResponseEntity<?> update(@RequestBody User user) {
         userService.update(user);
         return new ResponseEntity<>(HttpStatus.OK);
 

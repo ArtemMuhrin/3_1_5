@@ -43,7 +43,7 @@ public class UserServiceImp implements UserService {
         } else {
             user.setPassword(encoder.encode(user.getPassword()));
         }
-        if (user.getRoles() == null) {
+        if (user.getRoles().isEmpty()) {
             User userFromDb = getById(user.getId());
             user.setRoles(userFromDb.getRoles());
         }
