@@ -39,8 +39,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/admin/**").access("hasAnyRole('ROLE_ADMIN')")
                 .anyRequest().authenticated();
 
-        http.oauth2Login().
-                successHandler(successUserHandler)
+        http.oauth2Login()
+                .successHandler(successUserHandler)
                 .permitAll();
 
         http.formLogin()
