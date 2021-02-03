@@ -21,7 +21,6 @@ public class UserRestController {
     @GetMapping(value = "/currentUser")
     public ResponseEntity<User> getCurrentUser(Principal principal) {
         final User user = userService.getByName(principal.getName());
-
         return user != null
                 ? new ResponseEntity<>(user, HttpStatus.OK)
                 : new ResponseEntity<>(HttpStatus.NOT_FOUND);

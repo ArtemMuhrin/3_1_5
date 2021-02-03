@@ -18,7 +18,7 @@ async function fillCurrentUserInfo() {
                                             + "</tr>")
         $("#userInfo").append(currentUser.name + " with roles " + rolesToString(currentUser.roles));
     } else {
-        alert("Ошибка HTTP: " + response.status);
+        console.log(response.status);
     }
 }
 
